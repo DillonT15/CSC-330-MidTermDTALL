@@ -1,8 +1,15 @@
+#Dillon Tall CSC 330 Midterm Project
+#Flask Import
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Main dictionary used for animal name and corresponding facts
+# The facts are passed in as a list, this is because I found it easier
+# using a list to space them out in the html file and so I can also edit
+# each seperate fact
 animal_facts = {
+    
      'dog': [
         "1. It's estimated that roughly 21% of all dogs snore in their sleep.",
         "2. When dogs poop, they align themselves with the earth’s magnetic field. Specifically, with the north-south axis.",
@@ -31,10 +38,13 @@ animal_facts = {
     ],
     
 }
-
+#Dynamic route using "animal" variable used to pass onto html template
 @app.route('/fact/<animal>')
 def fact(animal):
+    #Get corresponding animal fact
     fact = animal_facts.get(animal.lower())
+    #Returns the html template (fact.html) passing the animal and fact variables
     return render_template('fact.html', animal=animal.capitalize(), fact=fact)
+
 if __name__ == '__main__':
     app.run(debug=True)
