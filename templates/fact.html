@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--The route passed the "animal" variable which is used throughout html template-->
+    <title>{{animal}} Facts!</title>
+    <!--linking style sheet (Located in the created static folder)-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Top 5 Facts About {{ animal }}s</h1>
+
+    <!--Incorporation of image. Source is found in static/images, uses the animal variable to fetch corresponding
+    named .jpg file.  -->
+    <img src="{{url_for('static',filename='images/' + animal.lower() + '.jpg')}}" width="300">
+    <ul>
+        <!--for loop that goes through the passed list (fact) from the route, 
+        used this to print out each individual fact line by line-->
+        {% for fact in fact %}
+            <li>{{ fact }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+</body>
+</html>
