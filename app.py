@@ -20,7 +20,7 @@ animal_facts = {
     ],
 
      'cat': [
-        "1. A group of cats is called a “clowder.",
+        "1. A group of cats is called a clowder.",
         "2. Cats make about 100 different sounds. Dogs make only about 10.",
         "3. Approximately 400,000 people are bitten by cats in the U.S. annually.",
         "4. A cat's hearing is better than a dog's. And a cat can hear high-frequency sounds up to two octaves higher than a human.",

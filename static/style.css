@@ -1,6 +1,7 @@
 /*Basic body css including a fancy radial gradient background*/
 body {
     background: radial-gradient(circle, #3c749f,#a758c9 );
+    color: #f8f9fa;
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
